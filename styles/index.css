@@ -1,0 +1,341 @@
+:root {
+  --primary-background: #1e1e1e;
+  --primary-card-background: #252525;
+  --secondary-card-background: #333333;
+
+  --accent-primary: #0098ff;
+  --accent-secondary: #0065a9;
+
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--primary-background);
+}
+
+body {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+main {
+  margin: 20px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header h1 {
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid var(--accent-secondary);
+  border-radius: 4px;
+  background-color: var(--secondary-card-background);
+}
+
+.navigation-tabs {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1.5rem;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.navigation-tabs .tab-label {
+  padding: clamp(0.5rem, 2vw, 1.25rem);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.navigation-tabs .tab-label.active {
+  border-bottom: 3px solid var(--accent-secondary);
+  border-radius: .75rem;
+}
+
+.income-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1.5rem 0.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.income-header h2 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: bold;
+  color: var(--accent-primary);
+  margin-top: 1rem;
+}
+
+.income-button {
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
+  border: none;
+  padding: 10px 15px;
+  margin-left: clamp(0.5rem, 2vw, 2.5rem);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.bonus-button,
+.sidejob-button,
+.loanpayback-button {
+  background-color: var(--secondary-card-background);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 2rem;
+  cursor: pointer;
+  margin-left: clamp(0.5rem, 2vw, 2.5rem);
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.income-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 2.5rem 0;
+  border-radius: 6px;
+  padding: 1rem;
+  height: 100%;
+}
+
+.shea-wrapper,
+.dave-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 48%;
+  min-width: 0;
+  padding: 1rem;
+  height: 100%;
+  border: 4px solid var(--accent-secondary);
+  border-radius: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.wrapper-name {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--accent-primary);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: bold;
+}
+
+#income-amount input {
+  width: 100%;
+  max-width: 50rem;
+  min-width: 0;
+  border: none;
+  background-color: var(--primary-card-background);
+  padding: 0.5rem;
+}
+
+#income-amount input:focus {
+  outline: none;
+}
+
+#type-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2.75rem;
+  margin-right: clamp(0.5rem, 2vw, 2.5rem);
+  flex-shrink: 0;
+}
+
+#amount-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+#amount-form>div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+
+#amount-form input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Extra large breakpoint for narrow vertical monitors */
+@media screen and (max-width: 1200px) {
+  .navigation-tabs {
+    font-size: x-large;
+  }
+
+  .income-header h2 {
+    font-size: x-large;
+  }
+
+  #income-amount input {
+    max-width: 30rem;
+  }
+
+  #type-form {
+    gap: 2.5rem;
+  }
+}
+
+/* Tablet styles (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  main {
+    margin: 15px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+
+  .navigation-tabs {
+    font-size: x-large;
+  }
+
+  .income-header h2 {
+    font-size: x-large;
+  }
+
+  .income-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .shea-wrapper,
+  .dave-wrapper {
+    width: 100%;
+  }
+
+  #income-amount input {
+    width: 100%;
+    max-width: 35rem;
+  }
+}
+
+/* Mobile styles (max 768px) */
+@media screen and (max-width: 768px) {
+  main {
+    margin: 10px;
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+    padding: 10px;
+  }
+
+  .navigation-tabs {
+    font-size: large;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .navigation-tabs .tab-label {
+    padding: 0.75rem 1rem;
+  }
+
+  .income-header {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .income-header h2 {
+    font-size: large;
+    margin-top: 0;
+  }
+
+  .income-wrapper {
+    margin: 1.5rem 0;
+    padding: 0.5rem;
+  }
+
+  .shea-wrapper,
+  .dave-wrapper {
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+  }
+
+  #type-form {
+    align-items: center;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  #amount-form {
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  #income-amount input {
+    width: 100%;
+    max-width: none;
+    padding: 0.5rem;
+  }
+
+  .income-button,
+  .bonus-button,
+  .sidejob-button,
+  .loanpayback-button {
+    margin-left: 0.5rem;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small mobile styles (max 480px) */
+@media screen and (max-width: 480px) {
+  header h1 {
+    font-size: 1rem;
+  }
+
+  .navigation-tabs {
+    font-size: medium;
+  }
+
+  .navigation-tabs .tab-label {
+    padding: 0.5rem 0.75rem;
+  }
+
+  #amount-form>div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .income-button,
+  .bonus-button,
+  .sidejob-button,
+  .loanpayback-button {
+    width: 100%;
+    margin-left: 0;
+  }
+}

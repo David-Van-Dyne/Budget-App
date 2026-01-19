@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/index.css">
+  <title>Budget-App</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <header>
+      <h1>Lets Build a Better Financial Future</h1>
+    </header>
+    <main>
+      <div class="navigation-tabs">
+        <label class="tab-label active" data-tab="home-section">Home</label>
+        <label class="tab-label" data-tab="income-section">Income</label>
+        <label class="tab-label" data-tab="expenses-section">Expenses</label>
+        <label class="tab-label" data-tab="savings-section">Savings</label>
+      </div>
+      <div class="income-wrapper">
+        <div class="shea-wrapper">
+          <h2 class="wrapper-name">Shea</h2>
+          <section id="income-type">
+            <div class="type-wrapper">
+              <form id="type-form">
+                <label for="income-type-select">Paycheck:</label>
+                <label for="income-type-select">Bonus:</label>
+                <label for="income-type-select">Side Job:</label>
+                <label for="income-type-select">Loan Payback:</label>
+              </form>
+            </div>
+          </section>
+          <section id="income-amount">
+            <div class="amount-wrapper">
+              <form id="amount-form">
+                <div>
+
+                  <input type="number" id="paycheck-amount" placeholder="Enter paycheck amount">
+                  <button class="income-button" type="submit">Set Income</button>
+                </div>
+                <div>
+
+                  <input type="number" id="bonus-amount" placeholder="Enter bonus amount">
+                  <button class="bonus-button" type="submit">Add Bonus</button>
+                </div>
+                <div>
+
+                  <input type="number" id="sidejob-amount" placeholder="Enter side job amount">
+                  <button class="sidejob-button" type="submit">Add Side Job</button>
+                </div>
+                <div>
+
+                  <input type="number" id="loanpayback-amount" placeholder="Enter loan payback amount">
+                  <button class="loanpayback-button" type="submit">Add Loan Payback</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+        <div class="dave-wrapper">
+          <h2 class="wrapper-name">Dave</h2>
+          <section id="income-type">
+            <div class="type-wrapper">
+              <form id="type-form">
+                <label for="income-type-select">Paycheck:</label>
+                <label for="income-type-select">Bonus:</label>
+                <label for="income-type-select">Side Job:</label>
+                <label for="income-type-select">Loan Payback:</label>
+              </form>
+            </div>
+          </section>
+          <section id="income-amount">
+            <div class="amount-wrapper">
+              <form id="amount-form">
+                <div>
+
+                  <input type="number" id="paycheck-amount" placeholder="Enter paycheck amount">
+                  <button class="income-button" type="submit">Set Income</button>
+                </div>
+                <div>
+
+                  <input type="number" id="bonus-amount" placeholder="Enter bonus amount">
+                  <button class="bonus-button" type="submit">Add Bonus</button>
+                </div>
+                <div>
+
+                  <input type="number" id="sidejob-amount" placeholder="Enter side job amount">
+                  <button class="sidejob-button" type="submit">Add Side Job</button>
+                </div>
+                <div>
+
+                  <input type="number" id="loanpayback-amount" placeholder="Enter loan payback amount">
+                  <button class="loanpayback-button" type="submit">Add Loan Payback</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- <section id="expenses-section">
+        <h2>Budget Overview</h2>
+        <p>Total Budget: $<span id="total-budget">0.00</span></p>
+        <p>Total Expenses: $<span id="total-expenses">0.00</span></p>
+        <p>Remaining Budget: $<span id="remaining-budget">0.00</span></p>
+      </section> -->
+      <div class="expense-wrapper">
+        <section id="expenses-section" hidden>
+          <div class="expense-form-wrapper">
+            <form id="expense-form">
+              <input type="text" id="expense-name" placeholder="Expense Name" required>
+              <input type="number" id="expense-amount" placeholder="Amount" required>
+              <button class="submit-button" type="submit">Add Expense</button>
+            </form>
+          </div>
+          <section id="expense-list">
+            <!-- <h2>Expense List</h2> -->
+            <ul id="expenses"></ul>
+          </section>
+        </section>
+      </div>
+      <div class="saving-wrapper">
+        <section id="savings-section" hidden>
+          <div class="savings-wrapper">
+            <form id="savings-form">
+              <input type="number" id="savings-amount" placeholder="Enter your savings goal" required>
+              <button class="submit-button" type="submit">Set Savings Goal</button>
+            </form>
+          </div>
+          <div id="savings-display" hidden>
+            <p>Savings Goal: $<span id="savings-goal">0.00</span></p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="scripts/index.js"></script>
+
+</body>
+
+</html>
