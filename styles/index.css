@@ -112,6 +112,10 @@ header h1 {
   height: 100%;
 }
 
+.income-wrapper[hidden] {
+  display: none;
+}
+
 .shea-wrapper,
 .dave-wrapper {
   display: flex;
