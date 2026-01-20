@@ -21,8 +21,8 @@ function showSection(sectionId) {
   const allSections = [
     document.querySelector('.home-wrapper'),
     document.querySelector('.income-wrapper'),
-    document.getElementById('expenses-section'),
-    document.getElementById('savings-section')
+    document.querySelector('.expenses-wrapper'),
+    document.querySelector('.savings-wrapper')
   ];
 
   // Hide all sections
@@ -40,11 +40,11 @@ function showSection(sectionId) {
     const incomeWrapper = document.querySelector('.income-wrapper');
     if (incomeWrapper) incomeWrapper.removeAttribute('hidden');
   } else if (sectionId === 'expenses-section') {
-    const expensesSection = document.getElementById('expenses-section');
-    if (expensesSection) expensesSection.removeAttribute('hidden');
+    const expensesWrapper = document.querySelector('.expenses-wrapper');
+    if (expensesWrapper) expensesWrapper.removeAttribute('hidden');
   } else if (sectionId === 'savings-section') {
-    const savingsSection = document.getElementById('savings-section');
-    if (savingsSection) savingsSection.removeAttribute('hidden');
+    const savingsWrapper = document.querySelector('.savings-wrapper');
+    if (savingsWrapper) savingsWrapper.removeAttribute('hidden');
   }
   // Note: home-section has no content to show, so all sections remain hidden
 }

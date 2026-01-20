@@ -31,6 +31,22 @@ main {
   margin-right: auto;
 }
 
+.home-wrapper[hidden] {
+  display: none;
+}
+
+.income-wrapper[hidden] {
+  display: none;
+}
+
+.expenses-wrapper[hidden] {
+  display: none;
+}
+
+.savings-wrapper[hidden] {
+  display: none;
+} 
+
 header h1 {
   padding: 20px;
   text-align: center;
@@ -59,6 +75,93 @@ header h1 {
   border-bottom: 3px solid var(--accent-secondary);
   border-radius: .75rem;
 }
+
+.home-topper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1.5rem 0.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: x-large;
+}
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 2.5rem 0;
+  border-radius: 6px;
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+}
+
+.bills-balance-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.bills-wrapper {
+  width: 50%;
+}
+
+.bills-wrapper input {
+  width: 100%;
+  max-width: 20rem;
+  min-width: 0;
+  border: none;
+  background-color: var(--primary-card-background);
+  padding: 0.5rem;
+}
+
+.bills-wrapper input:focus {
+  outline: none;
+}
+
+.balance-wrapper {
+  width: 50%;
+}
+
+.balance-wrapper input {
+  width: 100%;
+  max-width: 20rem;
+  min-width: 0;
+  border: none;
+  background-color: var(--primary-card-background);
+  padding: 0.5rem;
+}
+
+.balance-wrapper input:focus {
+  outline: none;
+}
+
+.bills-wrapper table {
+  width: 100%;
+}
+
+.balance-wrapper table {
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid var(--accent-secondary);
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: var(--primary-card-background);
+}
+
 
 .income-header {
   display: flex;
@@ -110,10 +213,6 @@ header h1 {
   border-radius: 6px;
   padding: 1rem;
   height: 100%;
-}
-
-.income-wrapper[hidden] {
-  display: none;
 }
 
 .shea-wrapper,

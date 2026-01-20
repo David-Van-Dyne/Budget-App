@@ -22,7 +22,132 @@
         <label class="tab-label" data-tab="savings-section">Savings</label>
       </div>
       <div class="home-wrapper">
+        <div class="home-topper">
+          <p>Current Pay Period Bills</p>
+          <p>Current Balances</p>
+        </div>
+        <div class="bills-balance-wrapper">
+          <div class="bills-wrapper">
+            <table>
+              <tr>
+                <th>Bill</th>
+                <th>Amount</th>
+              </tr>
+              <tbody id="bills-table-body">
+                <tr>
+                  <td>Mortgage</td>
+                  <td>
+                    <label for="mortgage-amount">$</label>
+                    <input type="number" id="mortgage-amount" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Heat</td>
+                  <td>
+                    <label for="heat-amount">$</label>
+                    <input type="number" id="heat-amount" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Electric</td>
+                  <td>
+                    <label for="electric-amount">$</label>
+                    <input type="number" id="electric-amount" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Cell</td>
+                  <td>
+                    <label for="cell-amount">$</label>
+                    <input type="number" id="cell-amount" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Internet</td>
+                  <td>
+                    <label for="internet-amount">$</label>
+                    <input type="number" id="internet-amount" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Car Payment</td>
+                  <td>
+                    <label for="carpayment-amount">$</label>
+                    <input type="number" id="carpayment-amount" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Insurance</td>
+                  <td>
+                    <label for="insurance-amount">$</label>
+                    <input type="number" id="insurance-amount" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Groceries</td>
+                  <td>
+                    <label for="groceries-amount">$</label>
+                    <input type="number" id="groceries-amount" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gas</td>
+                  <td>
+                    <label for="gas-amount">$</label>
+                    <input type="number" id="gas-amount" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Allowance</td>
+                  <td>
+                    <label for="allowance-amount">$</label>
+                    <input type="number" id="allowance-amount" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Pocket Money</td>
+                  <td>
+                    <label for="pocketmoney-amount">$</label>
+                    <input type="number" id="pocketmoney-amount" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Shea Debt</td>
+                  <td>
+                    <label for="sheadbt-amount">$</label>
+                    <input type="number" id="sheadbt-amount" value="">
+                  </td>
+                </tr>
 
+              </tbody>
+            </table>
+          </div>
+          <div class="balance-wrapper">
+            <table>
+              <tr>
+                <th>Account</th>
+                <th>Amount</th>
+              </tr>
+              <tbody id="income-table-body">
+                <!-- Income sources will be dynamically added here -->
+                <tr>
+                  <td>Shea's Balance</td>
+                  <td>
+                    <label for="shea-balance">$</label>
+                    <input type="text" id="shea-balance" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Dave's Balance</td>
+                  <td>
+                    <label for="dave-balance">$</label>
+                    <input type="text" id="dave-balance" value="">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
       <div class="income-wrapper" hidden>
         <div class="shea-wrapper">
@@ -110,8 +235,8 @@
         <p>Total Expenses: $<span id="total-expenses">0.00</span></p>
         <p>Remaining Budget: $<span id="remaining-budget">0.00</span></p>
       </section> -->
-      <div class="expense-wrapper">
-        <section id="expenses-section" hidden>
+      <div class="expenses-wrapper" hidden>
+        <section id="expenses-section">
           <div class="expense-form-wrapper">
             <form id="expense-form">
               <input type="text" id="expense-name" placeholder="Expense Name" required>
@@ -125,15 +250,15 @@
           </section>
         </section>
       </div>
-      <div class="saving-wrapper">
-        <section id="savings-section" hidden>
+      <div class="savings-wrapper" hidden>
+        <section id="savings-section">
           <div class="savings-wrapper">
             <form id="savings-form">
               <input type="number" id="savings-amount" placeholder="Enter your savings goal" required>
               <button class="submit-button" type="submit">Set Savings Goal</button>
             </form>
           </div>
-          <div id="savings-display" hidden>
+          <div id="savings-display">
             <p>Savings Goal: $<span id="savings-goal">0.00</span></p>
           </div>
         </section>
