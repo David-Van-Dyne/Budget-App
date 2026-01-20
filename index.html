@@ -21,7 +21,157 @@
         <label class="tab-label" data-tab="expenses-section">Expenses</label>
         <label class="tab-label" data-tab="savings-section">Savings</label>
       </div>
+
       <div class="home-wrapper">
+        <div class="title-wrapper">
+          <div class="titles">
+            <h2 class="home-title-bills">Current Pay Period Bills</h2>
+            <h2 class="home-title-accounts">Current Balances</h2>
+          </div>
+        </div>
+        <div class="current-finances-wrapper">
+          <div class="current-bills">
+            <div class="first-pay-period">
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="bill-name">Mortgage</label>
+                  <input type="number" id="bill-amount" placeholder="Amount">
+                </form>
+              </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="bill-name">Insurance</label>
+                  <input type="number" id="bill-amount" placeholder="Amount">
+                </form>
+              </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="bill-name">Heat</label>
+                  <input type="number" id="bill-amount" placeholder="Amount">
+                </form>
+              </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="bill-name">Electric</label>
+                  <input type="number" id="bill-amount" placeholder="Amount">
+                </form>
+              </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="bill-name">Internet</label>
+                  <input type="number" id="bill-amount" placeholder="Amount">
+                </form>
+              </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="bill-name">Cell</label>
+                  <input type="number" id="bill-amount" placeholder="Amount">
+                </form>
+              </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="bill-name">Shea Pocket</label>
+                  <input type="number" id="bill-amount" placeholder="Amount">
+                </form>
+              </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="bill-name">Dave Pocket</label>
+                  <input type="number" id="bill-amount" placeholder="Amount">
+                </form>
+              </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="bill-name">Shea Debt</label>
+                  <input type="number" id="bill-amount" placeholder="Amount">
+                </form>
+              </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="bill-name">Allowance</label>
+                  <input type="number" id="bill-amount" placeholder="Amount">
+                </form>
+              </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="bill-name">Car Gas</label>
+                  <input type="number" id="bill-amount" placeholder="Amount">
+                </form>
+              </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="bill-name">Groceries</label>
+                  <input type="number" id="bill-amount" placeholder="Amount">
+                </form>
+              </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="bill-name">Car Payment</label>
+                  <input type="number" id="bill-amount" placeholder="Amount">
+                </form>
+              </div>
+            </div>
+            <div class="second-pay-period" hidden>
+              <div class="bill-card"></div>
+              <div class="bill-card"></div>
+              <div class="bill-card"></div>
+              <div class="bill-card"></div>
+              <div class="bill-card"></div>
+              <div class="bill-card"></div>
+            </div>
+            <div class="third-pay-period" hidden>
+              <div class="bill-card"></div>
+              <div class="bill-card"></div>
+              <div class="bill-card"></div>
+              <div class="bill-card"></div>
+              <div class="bill-card"></div>
+            </div>
+          </div>
+          <div class="current-account-balances">
+            <div class="balances">
+              <div class="shea">
+                <form class="balance-form">
+                  <label for="shea-balance">Shea's Balance</label>
+                  <input type="text" id="shea-balance" placeholder="Amount">
+                </form>
+              </div>
+              <div class="dave">
+                <form class="balance-form">
+                  <label for="dave-balance">Dave's Balance</label>
+                  <input type="text" id="dave-balance" placeholder="Amount">
+                </form>
+              </div>
+              <div class="totals">
+                <div class="combined-balance">
+                  <form class="combined-balance-form">
+                    <label for="combined-balance">Combined Balance</label>
+                    <input type="text" id="combined-balance" placeholder="Amount">
+                  </form>
+                </div>
+                <div>
+                  <p style="font-size: xx-large; text-align:center;">-</p>
+                </div>
+                <div class="total-expenses">
+                  <form class="total-expenses-form">
+                    <label for="total-expenses">Total Expenses</label>
+                    <input type="text" id="total-expenses" placeholder="Amount">
+                  </form>
+                </div>
+                <div>
+                  <p style="font-size: xx-large; text-align:center;">=</p>
+                </div>
+                <div class="remaining">
+                  <form class="remaining-form">
+                    <label for="remaining">Remaining</label>
+                    <input type="text" id="remaining" placeholder="Amount">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="home-wrapper">
         <div class="home-topper">
           <p>Current Pay Period Bills</p>
           <p>Current Balances</p>
@@ -130,7 +280,7 @@
               </tr>
               <tbody id="income-table-body">
                 <!-- Income sources will be dynamically added here -->
-                <tr>
+      <!-- <tr>
                   <td>Shea's Balance</td>
                   <td>
                     <label for="shea-balance">$</label>
@@ -148,7 +298,7 @@
             </table>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="income-wrapper" hidden>
         <div class="shea-wrapper">
           <h2 class="wrapper-name">Shea</h2>
@@ -229,12 +379,6 @@
           </section>
         </div>
       </div>
-      <!-- <section id="expenses-section">
-        <h2>Budget Overview</h2>
-        <p>Total Budget: $<span id="total-budget">0.00</span></p>
-        <p>Total Expenses: $<span id="total-expenses">0.00</span></p>
-        <p>Remaining Budget: $<span id="remaining-budget">0.00</span></p>
-      </section> -->
       <div class="expenses-wrapper" hidden>
         <section id="expenses-section">
           <div class="expense-form-wrapper">
