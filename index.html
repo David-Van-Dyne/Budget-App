@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/modal.css">
   <title>Budget-App</title>
 </head>
 
@@ -12,8 +13,55 @@
 
   <div id="app">
     <header>
-      <h1>Lets Build a Better Financial Future</h1>
+      <h1>Build a Better Financial Future</h1>
     </header>
+
+    <div id="setupModal" class="modal">
+      <div class="modal-content">
+        <h1>Let's start with your budget setup</h1>
+        <form id="setup-form" class="setup-form">
+          <label for="name">What is your name?</label>
+          <select id="name" name="name">
+            <option value="Dave">Dave</option>
+            <option value="Shea">Shea</option>
+          </select>
+          <label for="paycheck">What is your normal paycheck amount?</label>
+          <input type="number" id="paycheck" name="paycheck">
+          <label for="pay-frequency">How often do you get paid?</label>
+          <select id="pay-frequency" name="pay-frequency">
+            <option value="weekly">Weekly</option>
+            <option value="bi-weekly">Bi-Weekly</option>
+            <option value="monthly">Monthly</option>
+            <option value="annually">Annually</option>
+          </select>
+          <label for="pay-day">What day do you usually get paid?</label>
+          <select id="day" name="day">
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+            <option value="sunday">Sunday</option>
+          </select>
+          <label for="creditcard-quantity" id="cc-label-test">How many credit cards do you have?</label>
+          <input type="number" id="creditcard-quantity" name="creditcard-quantity" min="0" max="10" value="0"
+            placeholder="How many credit cards do you have?">
+          <div id="creditcard-details"></div>
+          <label for="creditcard-balance">What are your current credit card balances?</label>
+          <input type="number" id="creditcard-balance" name="creditcard-balance">
+          <label for="additional-loans-quantity">How many additional loans do you have?</label>
+          <input type="number" id="additional-loans-quantity" name="additional-loans-quantity" min="0" max="10"
+            value="0" placeholder="How many additional loans do you have?">
+          <div id="additional-loans-details"></div>
+          <label for="additional-loans-balance">What are your current additional loan balances?</label>
+          <input type="number" id="additional-loans-balance" name="additional-loans-balance">
+          <button type="submit" id="submit-setup">Submit</button>
+        </form>
+        <button type="button" id="skip-setup">Skip</button>
+      </div>
+    </div>
+
     <main>
       <div class="navigation-tabs">
         <label class="tab-label active" data-tab="home-section">Home</label>
@@ -30,84 +78,174 @@
           </div>
         </div>
         <div class="current-finances-wrapper">
+          <div class="calendar-container">
+            <header class="calendar-header">
+              <p class="calendar-current-date"></p>
+              <div class="calendar-navigation">
+                <span id="calendar-prev" class="material-symbols-rounded">
+                  < </span>
+                    <span id="calendar-next" class="material-symbols-rounded">
+                      >
+                    </span>
+              </div>
+            </header>
+
+            <div class="calendar-body">
+              <ul class="calendar-weekdays">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+              </ul>
+              <ul class="calendar-dates"></ul>
+            </div>
+          </div>
           <div class="current-bills">
             <div class="first-pay-period">
               <div class="bill-card">
                 <form class="bill-form">
                   <label for="bill-name">Mortgage</label>
                   <input type="number" id="bill-amount" placeholder="Amount">
+                  <select id="who">
+                    <option value="both">Both</option>
+                    <option value="shea">Shea</option>
+                    <option value="dave">Dave</option>
+                  </select>
                 </form>
               </div>
               <div class="bill-card">
                 <form class="bill-form">
                   <label for="bill-name">Insurance</label>
                   <input type="number" id="bill-amount" placeholder="Amount">
+                  <select id="who">
+                    <option value="both">Both</option>
+                    <option value="shea">Shea</option>
+                    <option value="dave">Dave</option>
+                  </select>
                 </form>
               </div>
               <div class="bill-card">
                 <form class="bill-form">
                   <label for="bill-name">Heat</label>
                   <input type="number" id="bill-amount" placeholder="Amount">
+                  <select id="who">
+                    <option value="both">Both</option>
+                    <option value="shea">Shea</option>
+                    <option value="dave">Dave</option>
+                  </select>
                 </form>
               </div>
               <div class="bill-card">
                 <form class="bill-form">
                   <label for="bill-name">Electric</label>
                   <input type="number" id="bill-amount" placeholder="Amount">
+                  <select id="who">
+                    <option value="both">Both</option>
+                    <option value="shea">Shea</option>
+                    <option value="dave">Dave</option>
+                  </select>
                 </form>
               </div>
               <div class="bill-card">
                 <form class="bill-form">
                   <label for="bill-name">Internet</label>
                   <input type="number" id="bill-amount" placeholder="Amount">
+                  <select id="who">
+                    <option value="both">Both</option>
+                    <option value="shea">Shea</option>
+                    <option value="dave">Dave</option>
+                  </select>
                 </form>
               </div>
               <div class="bill-card">
                 <form class="bill-form">
                   <label for="bill-name">Cell</label>
                   <input type="number" id="bill-amount" placeholder="Amount">
+                  <select id="who">
+                    <option value="both">Both</option>
+                    <option value="shea">Shea</option>
+                    <option value="dave">Dave</option>
+                  </select>
                 </form>
               </div>
               <div class="bill-card">
                 <form class="bill-form">
                   <label for="bill-name">Shea Pocket</label>
                   <input type="number" id="bill-amount" placeholder="Amount">
+                  <select id="who">
+                    <option value="both">Both</option>
+                    <option value="shea">Shea</option>
+                    <option value="dave">Dave</option>
+                  </select>
                 </form>
               </div>
               <div class="bill-card">
                 <form class="bill-form">
                   <label for="bill-name">Dave Pocket</label>
                   <input type="number" id="bill-amount" placeholder="Amount">
+                  <select id="who">
+                    <option value="both">Both</option>
+                    <option value="shea">Shea</option>
+                    <option value="dave">Dave</option>
+                  </select>
                 </form>
               </div>
               <div class="bill-card">
                 <form class="bill-form">
                   <label for="bill-name">Shea Debt</label>
                   <input type="number" id="bill-amount" placeholder="Amount">
+                  <select id="who">
+                    <option value="both">Both</option>
+                    <option value="shea">Shea</option>
+                    <option value="dave">Dave</option>
+                  </select>
                 </form>
               </div>
               <div class="bill-card">
                 <form class="bill-form">
                   <label for="bill-name">Allowance</label>
                   <input type="number" id="bill-amount" placeholder="Amount">
+                  <select id="who">
+                    <option value="both">Both</option>
+                    <option value="shea">Shea</option>
+                    <option value="dave">Dave</option>
+                  </select>
                 </form>
               </div>
               <div class="bill-card">
                 <form class="bill-form">
                   <label for="bill-name">Car Gas</label>
                   <input type="number" id="bill-amount" placeholder="Amount">
+                  <select id="who">
+                    <option value="both">Both</option>
+                    <option value="shea">Shea</option>
+                    <option value="dave">Dave</option>
+                  </select>
                 </form>
               </div>
               <div class="bill-card">
                 <form class="bill-form">
                   <label for="bill-name">Groceries</label>
                   <input type="number" id="bill-amount" placeholder="Amount">
+                  <select id="who">
+                    <option value="both">Both</option>
+                    <option value="shea">Shea</option>
+                    <option value="dave">Dave</option>
+                  </select>
                 </form>
               </div>
               <div class="bill-card">
                 <form class="bill-form">
                   <label for="bill-name">Car Payment</label>
                   <input type="number" id="bill-amount" placeholder="Amount">
+                  <select id="who">
+                    <option value="both">Both</option>
+                    <option value="shea">Shea</option>
+                    <option value="dave">Dave</option>
+                  </select>
                 </form>
               </div>
             </div>
@@ -127,6 +265,7 @@
               <div class="bill-card"></div>
             </div>
           </div>
+
           <div class="current-account-balances">
             <div class="balances">
               <div class="shea">
@@ -317,23 +456,23 @@
               <form id="amount-form">
                 <div>
 
-                  <input type="number" id="paycheck-amount" placeholder="Enter paycheck amount">
-                  <button class="income-button" type="submit">Set Income</button>
+                  <input type="number" id="shea-paycheck-amount" placeholder="Enter paycheck amount">
+                  <button class="shea-income-button" type="button">Set Income</button>
                 </div>
                 <div>
 
-                  <input type="number" id="bonus-amount" placeholder="Enter bonus amount">
-                  <button class="bonus-button" type="submit">Add Bonus</button>
+                  <input type="number" id="shea-bonus-amount" placeholder="Enter bonus amount">
+                  <button class="shea-bonus-button" type="submit">Add Bonus</button>
                 </div>
                 <div>
 
-                  <input type="number" id="sidejob-amount" placeholder="Enter side job amount">
-                  <button class="sidejob-button" type="submit">Add Side Job</button>
+                  <input type="number" id="shea-sidejob-amount" placeholder="Enter side job amount">
+                  <button class="shea-sidejob-button" type="submit">Add Side Job</button>
                 </div>
                 <div>
 
-                  <input type="number" id="loanpayback-amount" placeholder="Enter loan payback amount">
-                  <button class="loanpayback-button" type="submit">Add Loan Payback</button>
+                  <input type="number" id="shea-loanpayback-amount" placeholder="Enter loan payback amount">
+                  <button class="shea-loanpayback-button" type="submit">Add Loan Payback</button>
                 </div>
               </form>
             </div>
@@ -356,23 +495,23 @@
               <form id="amount-form">
                 <div>
 
-                  <input type="number" id="paycheck-amount" placeholder="Enter paycheck amount">
-                  <button class="income-button" type="submit">Set Income</button>
+                  <input type="number" id="dave-paycheck-amount" placeholder="Enter paycheck amount">
+                  <button class="dave-income-button" type="submit">Set Income</button>
                 </div>
                 <div>
 
-                  <input type="number" id="bonus-amount" placeholder="Enter bonus amount">
-                  <button class="bonus-button" type="submit">Add Bonus</button>
+                  <input type="number" id="dave-bonus-amount" placeholder="Enter bonus amount">
+                  <button class="dave-bonus-button" type="submit">Add Bonus</button>
                 </div>
                 <div>
 
-                  <input type="number" id="sidejob-amount" placeholder="Enter side job amount">
-                  <button class="sidejob-button" type="submit">Add Side Job</button>
+                  <input type="number" id="dave-sidejob-amount" placeholder="Enter side job amount">
+                  <button class="dave-sidejob-button" type="submit">Add Side Job</button>
                 </div>
                 <div>
 
-                  <input type="number" id="loanpayback-amount" placeholder="Enter loan payback amount">
-                  <button class="loanpayback-button" type="submit">Add Loan Payback</button>
+                  <input type="number" id="dave-loanpayback-amount" placeholder="Enter loan payback amount">
+                  <button class="dave-loanpayback-button" type="submit">Add Loan Payback</button>
                 </div>
               </form>
             </div>
@@ -410,6 +549,7 @@
     </main>
   </div>
   <script src="scripts/index.js"></script>
+  <script src="scripts/setup.js"></script>
 
 </body>
 

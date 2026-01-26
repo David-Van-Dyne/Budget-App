@@ -1,0 +1,15 @@
+{
+  "name": "budget-app",
+  "version": "1.0.0",
+  "description": "- This is a budget app that I'm creating to keep track of personal expenses.\r - This is for educational purposes.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

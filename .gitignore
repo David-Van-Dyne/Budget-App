@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# User data (contains personal budget information)
+data.json
+
+# Environment variables
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
