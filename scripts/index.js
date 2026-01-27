@@ -334,3 +334,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+// Add ability to scroll on the calendar to change the month
+const calendarDates = document.querySelector('.calendar-dates');
+
+calendarDates.addEventListener('wheel', (event) => {
+  event.preventDefault();
+
+  if (event.deltaY < 0) {
+    // Scroll up - previous month
+    month = month - 1;
+  } else {
+    // Scroll down - next month
+    month = month + 1;
+  }
+  if (month < 0 || month > 11) {
+    date = new Date(year, month, new Date().getDate());
+    year = date.getFullYear();
+    month = date.getMonth();
+  } else {
+    date = new Date();
+  }
+  clickedDay = null;
+  selectedDayElement = null;
+  manipulate();
+});
