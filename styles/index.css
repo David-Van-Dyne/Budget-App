@@ -603,6 +603,7 @@ header h1 {
 
 .balances {
   width: 100%;
+  padding: .25rem;
 }
 
 #who {
