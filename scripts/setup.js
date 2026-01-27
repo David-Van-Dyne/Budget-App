@@ -6,7 +6,28 @@ let closeBtn = document.getElementById("submit-setup");
 let skipBtn = document.getElementById("skip-setup");
 
 // Function to open the modal
-function openModal() {
+async function openModal() {
+  try {
+    // Fetch setup data from server
+    const response = await fetch('/api/get-setup');
+    if (response.ok) {
+      const data = await response.json();
+      
+      // Check if both Dave and Shea have setup data
+      const daveSetup = data.setup && data.setup.dave;
+      const sheaSetup = data.setup && data.setup.shea;
+      
+      if (daveSetup && sheaSetup) {
+        console.log("Setup already completed for both users");
+        return; // Don't show modal if both have setup data
+      }
+    }
+  } catch (error) {
+    console.error('Error checking setup data:', error);
+  }
+  
+  // Show modal if setup is not complete
+  console.log("Opening setup modal");
   modal.style.display = "flex";
 }
 
@@ -27,7 +48,7 @@ window.onclick = function (event) {
 }
 
 // Open the modal when the page loads
-window.onload = function () {
+window.onload = async function () {
   openModal();
 }
 
