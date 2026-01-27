@@ -67,6 +67,7 @@ header h1 {
   display: flex;
   justify-content: space-evenly;
   margin-top: 1.5rem;
+  margin-bottom: 2rem;
   font-size: clamp(1.2rem, 3vw, 2rem);
   flex-wrap: wrap;
   gap: 0.5rem;
