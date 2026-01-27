@@ -16,13 +16,13 @@
 }
 
 .setup-form,
-input,
-select,
-label {
+.modal input,
+.modal select,
+.modal label {
   background-color: var(--primary-card-background);
 }
 
-button {
+.modal button {
   background-color: var(--accent-primary);
   color: var(--text-on-accent-primary);
   border: none;
@@ -38,14 +38,15 @@ button {
   /* Hidden by default */
   position: fixed;
   /* Stay in place */
-  z-index: 1;
+  z-index: 9999;
   left: 0;
   top: 0;
   width: 100%;
   /* Full width */
   height: 100%;
   /* Full height */
-  /* background-color: var(--primary-card-background); */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Semi-transparent backdrop */
   justify-content: center;
   /* Center content */
   align-items: center;
@@ -64,16 +65,16 @@ button {
   margin: auto;
 }
 
-h1 {
+.modal h1 {
   background-color: var(--primary-card-background);
 }
 
-form {
+.modal form {
   background-color: var(--primary-card-background);
 }
 
 /* The Close Button */
-.close {
+.modal .close {
   color: #aaa;
   float: right;
   font-size: 28px;
@@ -81,8 +82,8 @@ form {
   cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
+.modal .close:hover,
+.modal .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;

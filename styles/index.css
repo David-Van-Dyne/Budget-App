@@ -152,22 +152,6 @@ header h1 {
   width: 100%;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td,
-th {
-  border: 1px solid var(--accent-secondary);
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: var(--primary-card-background);
-}
-
 
 .income-header {
   display: flex;
@@ -455,10 +439,10 @@ tr:nth-child(even) {
 }
 
 .titles {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 2.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  margin: 2.5rem auto;
   width: 100%;
 }
 
@@ -471,45 +455,31 @@ tr:nth-child(even) {
 }
 
 .current-finances-wrapper {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   gap: 2rem;
 }
 
 .current-bills {
-  display: flex;
-  width: 38%;
-  gap: 1rem;
+  width: 100%;
 }
 
 .first-pay-period {
   width: 100%;
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 1rem;
-}
-
-.first-pay-period .bill-card:last-child {
-  grid-column: 1 / -1;
-  max-width: 50%;
-  margin: 0 auto;
-}
-
-.bill-card {
-  width: 100%;
-  background-color: var(--primary-card-background);
-  border: 2px solid var(--accent-secondary);
-  border-radius: 20px;
-  padding: 1rem;
+  border: 1px solid var(--accent-primary);
+  padding: .25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: .25rem;
 }
 
 .bill-card form {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: .5fr 1fr 1fr;
   align-items: center;
-  gap: 2rem;
+  gap: .25rem;
   background-color: var(--primary-card-background);
 }
 
@@ -520,31 +490,20 @@ tr:nth-child(even) {
 }
 
 .bill-card input {
-  width: 70%;
+  width: 75%;
   background-color: var(--secondary-card-background);
   border-radius: 8px;
   border: none;
   text-align: center;
-  padding: 0.5rem;
 }
 
 .bill-card input:focus {
   outline: none;
 }
 
-select {
+.bill-card select {
   outline: none;
 }
-
-/* .bill-card select {
-  background-color: var(--secondary-card-background);
-  border: none;
-  border-radius: 8px;
-  padding: 0.5rem;
-  color: var(--text-primary);
-  outline: none;
-  box-shadow: none;
-} */
 
 .bill-card select:focus {
   background-color: var(--secondary-card-background);
@@ -554,8 +513,9 @@ select {
 .current-account-balances {
   display: flex;
   flex-direction: column;
-  width: 38%;
+  border: 1px solid var(--accent-primary);
   gap: 1rem;
+  height: fit-content;
 }
 
 .balances {
@@ -614,10 +574,6 @@ select {
   border: none;
   text-align: center;
   padding: 0.5rem;
-  /* width: 100%;
-  background-color: var(--secondary-card-background);
-  border-radius: 8px;
-  border: none; */
 }
 
 .shea input:focus,
@@ -654,7 +610,6 @@ select {
   border-radius: 8px;
   border: none;
   text-align: center;
-  padding: 0.5rem;
 }
 
 #who select {
@@ -663,11 +618,9 @@ select {
 }
 
 .calendar-container {
-    background: #484747;
-    height: fit-content;
-    width: 320px;                
-    border-radius: 10px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--accent-primary);
+  background-color: white;
+  height: fit-content;
 }
 
 .calendar-container header {
@@ -675,6 +628,7 @@ select {
     align-items: center;
     padding: 15px 20px 8px;     
     justify-content: space-between;
+    background-color: white;
 }
 
 header .calendar-navigation {
@@ -704,11 +658,13 @@ header .calendar-navigation span:hover {
 
 header .calendar-current-date {
     font-weight: 500;
-    font-size: 1.2rem;        
+    font-size: 1.2rem;
+    color: #414141;        
 }
 
 .calendar-body {
-    padding: 10px;     
+    padding: 10px;
+    background-color: white;     
 }
 
 .calendar-body ul {
@@ -716,11 +672,13 @@ header .calendar-current-date {
     flex-wrap: wrap;
     display: flex;
     text-align: center;
+    background-color: white;
 }
 
 .calendar-body .calendar-dates {
     margin-bottom: 10px;    
     width: 100%;
+    background-color: white;
 }
 
 .calendar-body li {
@@ -735,6 +693,7 @@ header .calendar-current-date {
     cursor: pointer;
     text-align: center;
     box-sizing: border-box;
+    background-color: white;
 }
 
 .calendar-body .calendar-weekdays li {
@@ -771,14 +730,7 @@ header .calendar-current-date {
     background: #858484;
 }
 
-.calendar-dates li.highlight {
-    background: #8064ff; 
-    color: #fff;               
-    border-radius: 50%;                       
-    position: relative;
-    z-index: 10;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    width: calc(100% / 7);
+.calendar-dates li.highlight::before {
+    background: #858484;
+    color: #fff;
 }

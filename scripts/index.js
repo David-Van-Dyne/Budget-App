@@ -29,7 +29,7 @@ const manipulate = () => {
     lit += `<li class="inactive">${monthlastdate - i + 1}</li>`;
   }
 
-  
+
   for (let i = 1; i <= lastdate; i++) {
     let isToday = (i === date.getDate()
       && month === new Date().getMonth()
@@ -124,6 +124,25 @@ function showSection(sectionId) {
     if (savingsWrapper) savingsWrapper.removeAttribute('hidden');
   }
 }
+
+// Add event listeners to navigation tabs
+document.addEventListener('DOMContentLoaded', () => {
+  const tabLabels = document.querySelectorAll('.tab-label');
+
+  tabLabels.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active class from all tabs
+      tabLabels.forEach(t => t.classList.remove('active'));
+
+      // Add active class to clicked tab
+      tab.classList.add('active');
+
+      // Get the section to show from data-tab attribute
+      const sectionId = tab.getAttribute('data-tab');
+      showSection(sectionId);
+    });
+  });
+});
 
 // Sends income data to the server to save
 const sheaIncome = document.querySelector('.shea-income-button');

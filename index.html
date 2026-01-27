@@ -73,36 +73,17 @@
       <div class="home-wrapper">
         <div class="title-wrapper">
           <div class="titles">
-            <h2 class="home-title-bills">Current Pay Period Bills</h2>
-            <h2 class="home-title-accounts">Current Balances</h2>
+            <div>
+              <h2 class="home-title-bills">Current Pay Period Bills</h2>
+            </div>
+            <div></div>
+            <div>
+              <h2 class="home-title-accounts">Current Balances</h2>
+            </div>
           </div>
         </div>
         <div class="current-finances-wrapper">
-          <div class="calendar-container">
-            <header class="calendar-header">
-              <p class="calendar-current-date"></p>
-              <div class="calendar-navigation">
-                <span id="calendar-prev" class="material-symbols-rounded">
-                  < </span>
-                    <span id="calendar-next" class="material-symbols-rounded">
-                      >
-                    </span>
-              </div>
-            </header>
 
-            <div class="calendar-body">
-              <ul class="calendar-weekdays">
-                <li>Sun</li>
-                <li>Mon</li>
-                <li>Tue</li>
-                <li>Wed</li>
-                <li>Thu</li>
-                <li>Fri</li>
-                <li>Sat</li>
-              </ul>
-              <ul class="calendar-dates"></ul>
-            </div>
-          </div>
           <div class="current-bills">
             <div class="first-pay-period">
               <div class="bill-card">
@@ -266,178 +247,68 @@
             </div>
           </div>
 
+          <div class="calendar-container">
+            <header class="calendar-header">
+              <p class="calendar-current-date" style="background-color: white;"></p>
+              <div class="calendar-navigation" style="background-color: white;">
+                <span id="calendar-prev" class="material-symbols-rounded" style="background-color: white;">
+                  < </span>
+                    <span id="calendar-next" class="material-symbols-rounded" style="background-color: white;">
+                      >
+                    </span>
+              </div>
+            </header>
+
+            <div class="calendar-body">
+              <ul class="calendar-weekdays">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+              </ul>
+              <ul class="calendar-dates"></ul>
+            </div>
+          </div>
+
           <div class="current-account-balances">
             <div class="balances">
-              <div class="shea">
-                <form class="balance-form">
+              <div class="bill-card">
+                <form class="bill-form">
                   <label for="shea-balance">Shea's Balance</label>
-                  <input type="text" id="shea-balance" placeholder="Amount">
+                  <input type="number" id="shea-balance" placeholder="Amount">
                 </form>
               </div>
-              <div class="dave">
-                <form class="balance-form">
+              <div class="bill-card">
+                <form class="bill-form">
                   <label for="dave-balance">Dave's Balance</label>
-                  <input type="text" id="dave-balance" placeholder="Amount">
+                  <input type="number" id="dave-balance" placeholder="Amount">
                 </form>
               </div>
-              <div class="totals">
-                <div class="combined-balance">
-                  <form class="combined-balance-form">
-                    <label for="combined-balance">Combined Balance</label>
-                    <input type="text" id="combined-balance" placeholder="Amount">
-                  </form>
-                </div>
-                <div>
-                  <p style="font-size: xx-large; text-align:center;">-</p>
-                </div>
-                <div class="total-expenses">
-                  <form class="total-expenses-form">
-                    <label for="total-expenses">Total Expenses</label>
-                    <input type="text" id="total-expenses" placeholder="Amount">
-                  </form>
-                </div>
-                <div>
-                  <p style="font-size: xx-large; text-align:center;">=</p>
-                </div>
-                <div class="remaining">
-                  <form class="remaining-form">
-                    <label for="remaining">Remaining</label>
-                    <input type="text" id="remaining" placeholder="Amount">
-                  </form>
-                </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="combined-balance">Combined Balance</label>
+                  <input type="number" id="combined-balance" placeholder="Amount">
+                </form>
+              </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="total-expenses">Total Expenses</label>
+                  <input type="number" id="total-expenses" placeholder="Amount">
+                </form>
+              </div>
+              <div class="bill-card">
+                <form class="bill-form">
+                  <label for="remaining">Remaining</label>
+                  <input type="number" id="remaining" placeholder="Amount">
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- <div class="home-wrapper">
-        <div class="home-topper">
-          <p>Current Pay Period Bills</p>
-          <p>Current Balances</p>
-        </div>
-        <div class="bills-balance-wrapper">
-          <div class="bills-wrapper">
-            <table>
-              <tr>
-                <th>Bill</th>
-                <th>Amount</th>
-              </tr>
-              <tbody id="bills-table-body">
-                <tr>
-                  <td>Mortgage</td>
-                  <td>
-                    <label for="mortgage-amount">$</label>
-                    <input type="number" id="mortgage-amount" value="">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Heat</td>
-                  <td>
-                    <label for="heat-amount">$</label>
-                    <input type="number" id="heat-amount" value="">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Electric</td>
-                  <td>
-                    <label for="electric-amount">$</label>
-                    <input type="number" id="electric-amount" value="">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Cell</td>
-                  <td>
-                    <label for="cell-amount">$</label>
-                    <input type="number" id="cell-amount" value="">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Internet</td>
-                  <td>
-                    <label for="internet-amount">$</label>
-                    <input type="number" id="internet-amount" value="">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Car Payment</td>
-                  <td>
-                    <label for="carpayment-amount">$</label>
-                    <input type="number" id="carpayment-amount" value="">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Insurance</td>
-                  <td>
-                    <label for="insurance-amount">$</label>
-                    <input type="number" id="insurance-amount" value="">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Groceries</td>
-                  <td>
-                    <label for="groceries-amount">$</label>
-                    <input type="number" id="groceries-amount" value="">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Gas</td>
-                  <td>
-                    <label for="gas-amount">$</label>
-                    <input type="number" id="gas-amount" value="">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Allowance</td>
-                  <td>
-                    <label for="allowance-amount">$</label>
-                    <input type="number" id="allowance-amount" value="">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Pocket Money</td>
-                  <td>
-                    <label for="pocketmoney-amount">$</label>
-                    <input type="number" id="pocketmoney-amount" value="">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Shea Debt</td>
-                  <td>
-                    <label for="sheadbt-amount">$</label>
-                    <input type="number" id="sheadbt-amount" value="">
-                  </td>
-                </tr>
-
-              </tbody>
-            </table>
-          </div>
-          <div class="balance-wrapper">
-            <table>
-              <tr>
-                <th>Account</th>
-                <th>Amount</th>
-              </tr>
-              <tbody id="income-table-body">
-                <!-- Income sources will be dynamically added here -->
-      <!-- <tr>
-                  <td>Shea's Balance</td>
-                  <td>
-                    <label for="shea-balance">$</label>
-                    <input type="text" id="shea-balance" value="">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Dave's Balance</td>
-                  <td>
-                    <label for="dave-balance">$</label>
-                    <input type="text" id="dave-balance" value="">
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div> -->
       <div class="income-wrapper" hidden>
         <div class="shea-wrapper">
           <h2 class="wrapper-name">Shea</h2>
