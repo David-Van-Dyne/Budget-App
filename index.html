@@ -44,21 +44,11 @@
             <option value="saturday">Saturday</option>
             <option value="sunday">Sunday</option>
           </select>
-          <label for="creditcard-quantity" id="cc-label-test">How many credit cards do you have?</label>
-          <input type="number" id="creditcard-quantity" name="creditcard-quantity" min="0" max="10" value="0"
-            placeholder="How many credit cards do you have?">
-          <div id="creditcard-details"></div>
-          <label for="creditcard-balance">What are your current credit card balances?</label>
-          <input type="number" id="creditcard-balance" name="creditcard-balance">
-          <label for="additional-loans-quantity">How many additional loans do you have?</label>
-          <input type="number" id="additional-loans-quantity" name="additional-loans-quantity" min="0" max="10"
-            value="0" placeholder="How many additional loans do you have?">
-          <div id="additional-loans-details"></div>
-          <label for="additional-loans-balance">What are your current additional loan balances?</label>
-          <input type="number" id="additional-loans-balance" name="additional-loans-balance">
-          <button type="submit" id="submit-setup">Submit</button>
-        </form>
-        <button type="button" id="skip-setup">Skip</button>
+          <label for="current-balance" id="current-balance">What is your current balance?</label>
+          <input type="number" id="current-balance-input" name="current-balance-input">
+          <label for="next-pay-date" id="next-pay-date-label">When is your next pay date?</label>
+          <input type="date" id="next-pay-date" name="next-pay-date">
+        <button type="button" id="submitBtn">Submit</button>
       </div>
     </div>
 
@@ -69,6 +59,7 @@
         <label class="tab-label" data-tab="expenses-section">Expenses</label>
         <label class="tab-label" data-tab="savings-section">Savings</label>
       </div>
+      <div class="pay-period-container"></div>
 
       <div class="home-wrapper">
         <div class="title-wrapper">
@@ -82,6 +73,8 @@
             </div>
           </div>
         </div>
+        <div class="pay-period"></div>
+
         <div class="current-finances-wrapper">
 
           <div class="current-bills">
@@ -246,33 +239,6 @@
               <div class="bill-card"></div>
             </div>
           </div>
-
-          <div class="calendar-container">
-            <header class="calendar-header">
-              <p class="calendar-current-date" style="background-color: white;"></p>
-              <div class="calendar-navigation" style="background-color: white;">
-                <span id="calendar-prev" class="material-symbols-rounded" style="background-color: white;">
-                  < </span>
-                    <span id="calendar-next" class="material-symbols-rounded" style="background-color: white;">
-                      >
-                    </span>
-              </div>
-            </header>
-
-            <div class="calendar-body">
-              <ul class="calendar-weekdays">
-                <li>Sun</li>
-                <li>Mon</li>
-                <li>Tue</li>
-                <li>Wed</li>
-                <li>Thu</li>
-                <li>Fri</li>
-                <li>Sat</li>
-              </ul>
-              <ul class="calendar-dates"></ul>
-            </div>
-          </div>
-
           <div class="current-account-balances">
             <div class="balances">
               <div class="bill-card">

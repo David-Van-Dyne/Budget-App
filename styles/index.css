@@ -42,6 +42,16 @@ main {
   display: none;
 }
 
+.pay-period-container[hidden] {
+  display: none;
+}
+
+.pay-period-container, h3 {
+  text-align: center;
+  font-size: x-large;
+  margin-top: 5rem;
+}
+
 .income-wrapper[hidden] {
   display: none;
 }

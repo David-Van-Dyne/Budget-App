@@ -121,3 +121,36 @@ app.get('/api/get-setup', (req, res) => {
     res.json({});
   }
 });
+
+// API endpoint to update next pay date
+app.post('/api/update-next-pay-date', (req, res) => {
+  const dataPath = path.join(__dirname, 'data.json');
+  const { person, nextPayDate } = req.body;
+
+  if (!person || !nextPayDate) {
+    return res.status(400).json({ success: false, error: 'Person and nextPayDate are required' });
+  }
+
+  // Read existing data
+  let data = {};
+  if (fs.existsSync(dataPath)) {
+    try {
+      const fileContent = fs.readFileSync(dataPath, 'utf8');
+      data = fileContent ? JSON.parse(fileContent) : {};
+    } catch (err) {
+      data = {};
+    }
+  }
+
+  // Update next pay date
+  if (data.setup && data.setup[person.toLowerCase()]) {
+    data.setup[person.toLowerCase()].nextPayDate = nextPayDate;
+    data.setup[person.toLowerCase()].lastUpdated = new Date().toISOString();
+
+    // Write back to file
+    fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
+    res.json({ success: true, data });
+  } else {
+    res.status(404).json({ success: false, error: 'Person setup not found' });
+  }
+});
