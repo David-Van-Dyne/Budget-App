@@ -231,7 +231,7 @@ header h1 {
   width: 100%;
 }
 
-.first-pay-period {
+.first-pay-period, .second-pay-period, .third-pay-period {
   width: 75%;
   border: 1px solid var(--accent-primary);
   display: grid;
@@ -239,6 +239,12 @@ header h1 {
   gap: 1rem;
   margin: 2rem auto;
   padding: 1rem;
+}
+
+.first-pay-period[hidden],
+.second-pay-period[hidden],
+.third-pay-period[hidden] {
+  display: none;
 }
 
 .bill-card {
