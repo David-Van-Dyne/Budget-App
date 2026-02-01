@@ -46,7 +46,8 @@ main {
   display: none;
 }
 
-.pay-period-container, h3 {
+.pay-period-container,
+h3 {
   text-align: center;
   font-size: x-large;
   margin-top: 5rem;
@@ -94,17 +95,6 @@ header h1 {
   border-radius: .75rem;
 }
 
-.home-topper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin: 1.5rem 0.5rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-size: x-large;
-}
-
 .home-wrapper {
   display: flex;
   flex-direction: column;
@@ -113,56 +103,6 @@ header h1 {
   margin: 0;
   padding: 0;
 }
-
-.bills-balance-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.bills-wrapper {
-  width: 50%;
-}
-
-.bills-wrapper input {
-  width: 100%;
-  max-width: 20rem;
-  min-width: 0;
-  border: none;
-  background-color: var(--primary-card-background);
-  padding: 0.5rem;
-}
-
-.bills-wrapper input:focus {
-  outline: none;
-}
-
-.balance-wrapper {
-  width: 50%;
-}
-
-.balance-wrapper input {
-  width: 100%;
-  max-width: 20rem;
-  min-width: 0;
-  border: none;
-  background-color: var(--primary-card-background);
-  padding: 0.5rem;
-}
-
-.balance-wrapper input:focus {
-  outline: none;
-}
-
-.bills-wrapper table {
-  width: 100%;
-}
-
-.balance-wrapper table {
-  width: 100%;
-}
-
 
 .income-header {
   display: flex;
@@ -286,7 +226,147 @@ header h1 {
   min-width: 0;
 }
 
-/* Media Queries for Responsive Design */
+/* Base styles for bill cards - must come before media queries */
+.current-bills {
+  width: 100%;
+}
+
+.first-pay-period {
+  width: 75%;
+  border: 1px solid var(--accent-primary);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.bill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .25rem;
+  background-color: var(--primary-card-background);
+}
+
+.bill-card .bill-form {
+  display: contents;
+}
+
+.bill-card label {
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin: auto;
+  background-color: var(--primary-card-background);
+}
+
+.bill-card input {
+  width: 25%;
+  background-color: var(--secondary-card-background);
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+}
+
+.bill-card input:focus {
+  outline: none;
+}
+
+.bill-card select {
+  outline: none;
+  background-color: var(--secondary-card-background);
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+}
+
+.bill-card select:focus {
+  background-color: var(--secondary-card-background);
+}
+
+.bill-controls {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  background-color: var(--primary-card-background);
+}
+
+.current-account-balances {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--accent-primary);
+  gap: 1rem;
+  height: fit-content;
+  margin: 2rem 0;
+}
+
+.current-account-balances .bill-form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: .25rem;
+  background-color: var(--primary-card-background);
+}
+
+.balances {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.combined-balance {
+  margin-top: 1rem;
+}
+
+.combined-balance,
+.total-expenses,
+.remaining {
+  width: 100%;
+  background-color: var(--primary-card-background);
+  border: 6px solid var(--accent-secondary);
+  border-radius: 20px;
+  padding: 0.5rem;
+  font-size: x-large;
+}
+
+.combined-balance form,
+.total-expenses form,
+.remaining form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--primary-card-background);
+}
+
+.combined-balance input,
+.total-expenses input,
+.remaining input {
+  width: 70%;
+  background-color: var(--secondary-card-background);
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.combined-balance input:focus,
+.total-expenses input:focus,
+.remaining input:focus {
+  outline: none;
+}
+
+.combined-balance label,
+.total-expenses label,
+.remaining label {
+  white-space: nowrap;
+  flex-shrink: 0;
+  background-color: var(--primary-card-background);
+}
+
+/* Media Queries for Responsive Design - All at the end */
 
 /* Extra large breakpoint for narrow vertical monitors */
 @media screen and (max-width: 1200px) {
@@ -363,6 +443,17 @@ header h1 {
     padding: 0.75rem 1rem;
   }
 
+  .first-pay-period {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bill-card {
+    display: flex;
+    flex-direction: column;
+  }
+
   .income-header {
     flex-direction: column;
     gap: 1rem;
@@ -414,8 +505,8 @@ header h1 {
   }
 }
 
-/* Small mobile styles (max 480px) */
-@media screen and (max-width: 480px) {
+/* Small mobile styles (max 430px) */
+@media screen and (max-width: 430px) {
   header h1 {
     font-size: 1rem;
   }
@@ -426,6 +517,18 @@ header h1 {
 
   .navigation-tabs .tab-label {
     padding: 0.5rem 0.75rem;
+  }
+
+  .first-pay-period {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bill-card {
+    display: flex;
+    flex-direction: column;
   }
 
   #amount-form>div {
@@ -442,312 +545,4 @@ header h1 {
     width: 100%;
     margin-left: 0;
   }
-}
-
-.title-wrapper {
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.titles {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  text-align: center;
-  margin: 2.5rem auto;
-  width: 100%;
-}
-
-.home-title-bills {
-  font-size: 34px;
-}
-
-.home-title-accounts {
-  font-size: 34px;
-}
-
-.current-finances-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 100%;
-  gap: 2rem;
-}
-
-.current-bills {
-  width: 100%;
-}
-
-.first-pay-period {
-  width: 100%;
-  border: 1px solid var(--accent-primary);
-  padding: .25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  gap: .25rem;
-}
-
-.bill-card form {
-  display: grid;
-  grid-template-columns: .5fr 1fr 1fr;
-  align-items: center;
-  gap: .25rem;
-  background-color: var(--primary-card-background);
-}
-
-.bill-card label {
-  white-space: nowrap;
-  flex-shrink: 0;
-  background-color: var(--primary-card-background);
-}
-
-.bill-card input {
-  width: 75%;
-  background-color: var(--secondary-card-background);
-  border-radius: 8px;
-  border: none;
-  text-align: center;
-}
-
-.bill-card input:focus {
-  outline: none;
-}
-
-.bill-card select {
-  outline: none;
-}
-
-.bill-card select:focus {
-  background-color: var(--secondary-card-background);
-  outline: none;
-}
-
-.current-account-balances {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--accent-primary);
-  gap: 1rem;
-  height: fit-content;
-  margin: auto 0;
-}
-
-.current-account-balances .bill-form {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: center;
-  gap: .25rem;
-  background-color: var(--primary-card-background);
-}
-
-.balances {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.shea,
-.dave {
-  width: 100%;
-  background-color: var(--primary-card-background);
-  border: 2px solid var(--accent-secondary);
-  border-radius: 20px;
-  padding: 1rem;
-}
-
-.combined-balance {
-  margin-top: 1rem;
-}
-
-.combined-balance,
-.total-expenses,
-.remaining {
-  /* margin-top: 1rem; */
-  width: 100%;
-  background-color: var(--primary-card-background);
-  border: 6px solid var(--accent-secondary);
-  border-radius: 20px;
-  padding: 0.5rem;
-  font-size: x-large;
-}
-
-.shea form,
-.dave form,
-.combined-balance form,
-.total-expenses form,
-.remaining form {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  background-color: var(--primary-card-background);
-}
-
-.shea input,
-.dave input,
-.combined-balance input,
-.total-expenses input,
-.remaining input {
-  width: 70%;
-  background-color: var(--secondary-card-background);
-  border-radius: 8px;
-  border: none;
-  text-align: center;
-  padding: 0.5rem;
-}
-
-.shea input:focus,
-.dave input:focus,
-.combined-balance input:focus,
-.total-expenses input:focus,
-.remaining input:focus {
-  outline: none;
-}
-
-.shea label,
-.dave label,
-.combined-balance label,
-.total-expenses label,
-.remaining label {
-  white-space: nowrap;
-  flex-shrink: 0;
-  background-color: var(--primary-card-background);
-}
-
-.totals {
-  border: 2px solid var(--accent-primary);
-  border-radius: 10px;
-  padding: 0.5rem;
-  margin-top: 3rem;
-}
-
-.balances {
-  width: 100%;
-  padding: .25rem;
-}
-
-#who {
-  background-color: var(--secondary-card-background);
-  border-radius: 8px;
-  border: none;
-  text-align: center;
-}
-
-#who select {
-  display: none;
-  background-color: var(--secondary-card-background);
-}
-
-.calendar-container {
-  border: 1px solid var(--accent-primary);
-  background-color: white;
-  height: fit-content;
-}
-
-.calendar-container header {
-  display: flex;
-  align-items: center;
-  padding: 15px 20px 8px;
-  justify-content: space-between;
-  background-color: white;
-}
-
-header .calendar-navigation {
-  display: flex;
-}
-
-header .calendar-navigation span {
-  height: 30px;
-  width: 30px;
-  margin: 0 2px;
-  cursor: pointer;
-  text-align: center;
-  line-height: 30px;
-  border-radius: 50%;
-  user-select: none;
-  color: #aeabab;
-  font-size: 1.4rem;
-}
-
-.calendar-navigation span:last-child {
-  margin-right: -8px;
-}
-
-header .calendar-navigation span:hover {
-  background: #f2f2f2;
-}
-
-header .calendar-current-date {
-  font-weight: 500;
-  font-size: 1.2rem;
-  color: #414141;
-}
-
-.calendar-body {
-  padding: 10px;
-  background-color: white;
-}
-
-.calendar-body ul {
-  list-style: none;
-  flex-wrap: wrap;
-  display: flex;
-  text-align: center;
-  background-color: white;
-}
-
-.calendar-body .calendar-dates {
-  margin-bottom: 10px;
-  width: 100%;
-  background-color: white;
-}
-
-.calendar-body li {
-  width: calc(100% / 7);
-  height: 30px;
-  line-height: 30px;
-  font-size: 0.9rem;
-  color: #414141;
-  margin-top: 20px;
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-  text-align: center;
-  box-sizing: border-box;
-  background-color: white;
-}
-
-.calendar-body .calendar-weekdays li {
-  cursor: default;
-  font-weight: 500;
-  font-size: 0.85rem;
-}
-
-.calendar-dates li.inactive {
-  color: #aaa;
-  cursor: default;
-}
-
-.calendar-dates li.active {
-  color: #fff;
-}
-
-.calendar-dates li::before {
-  position: absolute;
-  content: "";
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.calendar-dates li.active::before {
-  background: #6964ff;
-}
-
-.calendar-dates li:not(.active):not(.highlight):hover::before {
-  background: #858484;
 }
