@@ -80,7 +80,7 @@ submitBtn.addEventListener('click', async function (event) {
     paycheck: parseFloat(formData.get('paycheck')),
     payFrequency: formData.get('pay-frequency'),
     day: formData.get('day'),
-    nextPayDate: formData.get('next-pay-date')
+    firstPayDate: formData.get('first-pay-date')
   };
 
   try {

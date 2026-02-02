@@ -46,8 +46,8 @@
           </select>
           <label for="current-balance" id="current-balance">What is your current balance?</label>
           <input type="number" id="current-balance-input" name="current-balance-input">
-          <label for="next-pay-date" id="next-pay-date-label">When is your next pay date?</label>
-          <input type="date" id="next-pay-date" name="next-pay-date">
+          <label for="first-pay-date" id="first-pay-date">When is your first pay date?</label>
+          <input type="date" id="first-pay-date" name="first-pay-date">
           <button type="button" id="submitBtn">Submit</button>
       </div>
     </div>
@@ -70,10 +70,10 @@
             <div class="first-pay-period" hidden>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Mortgage</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="mortgage">Mortgage</label>
+                  <input type="number" class="mortgage-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="mortgage-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -84,10 +84,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Insurance</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="insurance">Insurance</label>
+                  <input type="number" class="insurance-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="insurance-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -98,10 +98,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Heat</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="heat">Heat</label>
+                  <input type="number" class="heat-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="heat-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -112,10 +112,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Electric</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="electric">Electric</label>
+                  <input type="number" class="electric-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="electric-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -126,10 +126,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Internet</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="internet">Internet</label>
+                  <input type="number" class="internet-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="internet-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -140,10 +140,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Cell</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="cell">Cell</label>
+                  <input type="number" class="cell-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="cell-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -154,10 +154,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Shea Pocket</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="shea-pocket">Shea Pocket</label>
+                  <input type="number" class="shea-pocket-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="shea-pocket-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -168,10 +168,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Dave Pocket</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="dave-pocket">Dave Pocket</label>
+                  <input type="number" class="dave-pocket-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="dave-pocket-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -182,10 +182,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Shea Debt</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="shea-debt">Shea Debt</label>
+                  <input type="number" class="shea-debt-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="shea-debt-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -196,10 +196,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Allowance</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="allowance">Allowance</label>
+                  <input type="number" class="allowance-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="allowance-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -210,10 +210,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Car Gas</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="car-gas">Car Gas</label>
+                  <input type="number" class="car-gas-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="car-gas-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -224,10 +224,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Groceries</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="groceries">Groceries</label>
+                  <input type="number" class="groceries-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="groceries-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -238,9 +238,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Car Payment</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="car-payment">Car Payment</label>
+                  <input type="number" class="car-payment-amount" placeholder="Amount">
                   <div class="bill-controls">
+                    <input type="checkbox" class="car-payment-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -253,10 +254,10 @@
             <div class="second-pay-period" hidden>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Shea Pocket</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="shea-pocket">Shea Pocket</label>
+                  <input type="number" class="shea-pocket-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="shea-pocket-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -267,10 +268,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Dave Pocket</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="dave-pocket">Dave Pocket</label>
+                  <input type="number" class="dave-pocket-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="dave-pocket-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -281,10 +282,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Allowance</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="allowance">Allowance</label>
+                  <input type="number" class="allowance-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="allowance-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -295,10 +296,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Car Gas</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="car-gas">Car Gas</label>
+                  <input type="number" class="car-gas-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="car-gas-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -309,10 +310,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Groceries</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="groceries">Groceries</label>
+                  <input type="number" class="groceries-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="groceries-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -323,10 +324,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">A/C</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="a-c">A/C</label>
+                  <input type="number" class="a-c-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="a-c-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -339,10 +340,10 @@
             <div class="third-pay-period" hidden>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Shea Pocket</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="shea-pocket">Shea Pocket</label>
+                  <input type="number" class="shea-pocket-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="shea-pocket-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -353,10 +354,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Dave Pocket</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="dave-pocket">Dave Pocket</label>
+                  <input type="number" class="dave-pocket-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="dave-pocket-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -367,10 +368,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Allowance</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="allowance">Allowance</label>
+                  <input type="number" class="allowance-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="allowance-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -381,10 +382,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Car Gas</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="car-gas">Car Gas</label>
+                  <input type="number" class="car-gas-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="car-gas-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -395,10 +396,10 @@
               </div>
               <div class="bill-card">
                 <form class="bill-form">
-                  <label for="bill-name">Groceries</label>
-                  <input type="number" class="bill-amount" placeholder="Amount">
+                  <label for="groceries">Groceries</label>
+                  <input type="number" class="groceries-amount" placeholder="Amount">
                   <div class="bill-controls">
-                    <input type="checkbox" class="paid-checkbox">
+                    <input type="checkbox" class="groceries-checkbox">
                     <select class="who">
                       <option value="both">Both</option>
                       <option value="shea">Shea</option>
@@ -575,7 +576,12 @@
       </div>
     </main>
   </div>
-  <script src="scripts/index.js"></script>
+  <!-- Load scripts in order: utilities first, then modules, then initialization -->
+  <script src="scripts/payPeriod.js"></script>
+  <script src="scripts/bills.js"></script>
+  <script src="scripts/income.js"></script>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/app.js"></script>
   <script src="scripts/setup.js"></script>
 
 </body>
